@@ -1,25 +1,42 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 export default function Home() {
   const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState('TİMA İNŞAAT UZMANI');
+  const [status, setStatus] = useState('TİMA İNŞAAT DANIŞMANI');
 
   const startAssistant = () => {
-    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    if (!SpeechRecognition) return;
-    const recognition = new SpeechRecognition();
-    recognition.lang = 'tr-TR';
-    recognition.onstart = () => { setLoading(true); setStatus('Sizi Dinliyorum...'); };
-    recognition.onresult = () => { setLoading(false); setStatus('Analiz Ediliyor...'); };
-    recognition.start();
+    if (typeof window !== 'undefined') {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SpeechRecognition) return;
+      
+      const recognition = new SpeechRecognition();
+      recognition.lang = 'tr-TR';
+      
+      recognition.onstart = () => { 
+        setLoading(true); 
+        setStatus('Sizi Dinliyorum...'); 
+      };
+      
+      recognition.onresult = () => { 
+        setLoading(false); 
+        setStatus('Analiz Ediliyor...'); 
+      };
+
+      recognition.onerror = () => {
+        setLoading(false);
+        setStatus('Tekrar Deneyin');
+      };
+
+      recognition.start();
+    }
   };
 
   return (
     <div style={{
       backgroundColor: '#000',
       height: '100vh',
-      color: '#d4af37', // Gerçek Gold rengi
-      fontFamily: '"Times New Roman", Times, serif', // İstediğin klasik ağır yazı karakteri
+      color: '#d4af37',
+      fontFamily: '"Times New Roman", Times, serif',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'space-between',
@@ -27,64 +44,40 @@ export default function Home() {
       boxSizing: 'border-box'
     }}>
       
-      {/* Üst Kısım: Kurumsal Logo */}
       <header style={{ textAlign: 'center' }}>
-        <h1 style={{ 
-          fontSize: '3rem', 
-          letterSpacing: '12px', 
-          margin: 0, 
-          fontWeight: '400',
-          textTransform: 'uppercase' 
-        }}>TİMA</h1>
-        <h2 style={{ 
-          fontSize: '1.5rem', 
-          letterSpacing: '6px', 
-          margin: '10px 0', 
-          fontWeight: '300',
-          color: '#fff' 
-        }}>İNŞAAT</h2>
-        <div style={{ height: '1px', width: '80px', backgroundColor: '#d4af37', margin: '20px auto' }}></div>
+        <h1 style={{ fontSize: '3.5rem', letterSpacing: '12px', margin: 0, fontWeight: '400', color: '#d4af37' }}>TİMA</h1>
+        <h2 style={{ fontSize: '1.4rem', letterSpacing: '8px', color: '#fff', margin: '5px 0', fontWeight: '300' }}>İNŞAAT</h2>
+        <div style={{ height: '2px', width: '80px', backgroundColor: '#d4af37', margin: '20px auto' }}></div>
       </header>
 
-      {/* Orta Kısım: İnşaat Sloganı */}
-      <main style={{ textAlign: 'left' }}>
-        <p style={{ 
-          fontSize: '2.8rem', 
-          lineHeight: '1.2', 
-          color: '#fff', 
-          margin: 0,
-          fontStyle: 'italic'
-        }}>
+      <main>
+        <p style={{ fontSize: '2.5rem', lineHeight: '1.2', color: '#fff', fontStyle: 'italic', margin: 0 }}>
           Geleceği <br/> 
-          <span style={{ color: '#d4af37' }}>Altın</span> <br/> 
+          <span style={{ color: '#d4af37', fontWeight: 'bold' }}>Altın</span> <br/> 
           Standartlarla <br/> 
           İnşa Ediyoruz.
         </p>
       </main>
 
-      {/* Alt Kısım: Butonlar */}
       <footer style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-        
-        {/* Asistan Butonu - Gold Çerçeve */}
         <button 
           onClick={startAssistant}
           style={{
-            background: 'rgba(212, 175, 55, 0.05)',
+            background: 'rgba(212, 175, 55, 0.1)',
             border: '2px solid #d4af37',
             padding: '25px',
             color: '#d4af37',
             cursor: 'pointer',
             width: '100%',
-            transition: '0.4s'
+            display: 'block'
           }}
         >
-          <span style={{ fontSize: '0.7rem', letterSpacing: '3px', display: 'block', marginBottom: '8px', color: '#fff' }}>
+          <span style={{ fontSize: '0.7rem', letterSpacing: '3px', display: 'block', color: '#fff', marginBottom: '8px' }}>
             SESLİ YAPAY ZEKA SİSTEMİ
           </span>
-          <span style={{ fontSize: '1.2rem', fontWeight: 'bold', textTransform: 'uppercase' }}>{status}</span>
+          <span style={{ fontSize: '1.1rem', fontWeight: 'bold', textTransform: 'uppercase' }}>{status}</span>
         </button>
 
-        {/* WhatsApp Butonu - Tam Gold Blok */}
         <a 
           href="https://wa.me/905323663922"
           target="_blank"
@@ -96,16 +89,14 @@ export default function Home() {
             textDecoration: 'none',
             fontSize: '1rem',
             fontWeight: 'bold',
-            letterSpacing: '2px',
             textAlign: 'center',
-            display: 'block',
-            textTransform: 'uppercase'
+            letterSpacing: '2px',
+            display: 'block'
           }}
         >
-          ÖZEL DANIŞMANLIK HATTI
+          WHATSAPP İLETİŞİM HATTI
         </a>
       </footer>
-
     </div>
   );
 }
