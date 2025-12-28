@@ -1,92 +1,110 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Home() {
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState('TİMA PROJE Asistanı');
 
   const startAssistant = () => {
-    const recognition = new (window.webkitSpeechRecognition || window.SpeechRecognition)();
+    // Tarayıcı desteği kontrolü
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+      alert("Tarayıcınız ses tanımayı desteklemiyor.");
+      return;
+    }
+
+    const recognition = new SpeechRecognition();
     recognition.lang = 'tr-TR';
-    recognition.onstart = () => { setLoading(true); setStatus('Dinleniyor...'); };
-    recognition.onresult = () => { setLoading(false); setStatus('Analiz ediliyor...'); };
+    
+    recognition.onstart = () => { 
+      setLoading(true); 
+      setStatus('Sizi Dinliyorum...'); 
+    };
+    
+    recognition.onresult = () => { 
+      setLoading(false); 
+      setStatus('Analiz Ediliyor...'); 
+    };
+
+    recognition.onerror = () => {
+      setLoading(false);
+      setStatus('Tekrar Deneyin');
+    };
+
     recognition.start();
   };
 
   return (
     <div style={{
-      backgroundColor: '#050505',
-      backgroundImage: 'radial-gradient(circle at top right, #1a1a1a, #050505)',
+      backgroundColor: '#000',
       height: '100vh',
       color: '#fff',
-      fontFamily: '"Optima", serif',
+      fontFamily: '"Georgia", serif',
       display: 'flex',
       flexDirection: 'column',
-      padding: '60px'
+      justifyContent: 'space-between',
+      padding: '40px 20px',
+      boxSizing: 'border-box',
+      overflow: 'hidden'
     }}>
       
-      {/* Sol Üst Kurumsal Logo */}
-      <div style={{ textAlign: 'left' }}>
-        <h1 style={{ fontSize: '2.5rem', letterSpacing: '10px', color: '#d4af37', margin: 0 }}>TİMA PROJE</h1>
-        <p style={{ fontSize: '0.8rem', letterSpacing: '4px', color: '#666', marginTop: '10px' }}>GAYRİMENKUL & YATIRIM</p>
-      </div>
+      {/* Üst Kısım: Logo */}
+      <header style={{ textAlign: 'center', marginTop: '20px' }}>
+        <h1 style={{ fontSize: '2.5rem', letterSpacing: '8px', color: '#d4af37', margin: 0 }}>TİMA PROJE</h1>
+        <p style={{ fontSize: '0.7rem', letterSpacing: '3px', color: '#666', marginTop: '10px' }}>GAYRİMENKUL & YATIRIM</p>
+      </header>
 
-      {/* Orta Alan - Boş ve Ferah (Lüks hissi verir) */}
-      <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}>
-        <div style={{ maxWidth: '500px' }}>
-          <h2 style={{ fontSize: '3rem', fontWeight: '300', lineHeight: '1.2' }}>Geleceği Güvenle İnşa Ediyoruz.</h2>
-          <p style={{ color: '#888', marginTop: '20px', fontSize: '1.1rem' }}>Kentsel dönüşümde şeffaf ve profesyonel çözümler.</p>
-        </div>
-      </div>
+      {/* Orta Kısım: Slogan */}
+      <main style={{ textAlign: 'left', padding: '0 10px' }}>
+        <h2 style={{ fontSize: '2.8rem', fontWeight: '300', lineHeight: '1.1', marginBottom: '20px' }}>
+          Geleceği <br/> Güvenle <br/> İnşa Ediyoruz.
+        </h2>
+      </main>
 
-      {/* Sağ Alt Köşe: Uzman Panel (Asistan Burada) */}
-      <div style={{
-        position: 'fixed',
-        bottom: '40px',
-        right: '40px',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'flex-end',
-        gap: '15px'
-      }}>
+      {/* Alt Kısım: Butonlar (Birbirine çarpmayacak şekilde düzenlendi) */}
+      <footer style={{ display: 'flex', flexDirection: 'column', gap: '15px', marginBottom: '30px' }}>
         
-        {/* Asistan Butonu */}
-        <div 
+        {/* Asistan Butonu - Daha şık ve tıklanabilir */}
+        <button 
           onClick={startAssistant}
           style={{
-            backgroundColor: 'rgba(212, 175, 55, 0.1)',
+            background: 'transparent',
             border: '1px solid #d4af37',
-            padding: '15px 30px',
-            borderRadius: '2px',
+            padding: '20px',
+            color: '#fff',
             cursor: 'pointer',
-            textAlign: 'right',
-            backdropFilter: 'blur(10px)',
-            transition: '0.3s'
+            textAlign: 'center',
+            backdropFilter: 'blur(5px)',
+            width: '100%',
+            display: 'block'
           }}
         >
-          <span style={{ fontSize: '0.7rem', letterSpacing: '2px', color: '#d4af37', display: 'block' }}>SESLİ UZMAN</span>
-          <span style={{ fontSize: '1rem', color: '#fff' }}>{status}</span>
-        </div>
+          <span style={{ fontSize: '0.6rem', letterSpacing: '2px', color: '#d4af37', display: 'block', marginBottom: '5px' }}>
+            {loading ? 'SİSTEM AKTİF' : 'SESLİ UZMAN DANIŞMAN'}
+          </span>
+          <span style={{ fontSize: '1.1rem', fontWeight: '300' }}>{status}</span>
+        </button>
 
-        {/* WhatsApp Butonu */}
+        {/* WhatsApp Butonu - Asistanla karışmaz */}
         <a 
           href="https://wa.me/905323663922"
+          target="_blank"
+          rel="noopener noreferrer"
           style={{
             backgroundColor: '#d4af37',
             color: '#000',
-            padding: '12px 25px',
+            padding: '18px',
             textDecoration: 'none',
-            fontSize: '0.8rem',
+            fontSize: '0.9rem',
             fontWeight: 'bold',
-            letterSpacing: '1px'
+            letterSpacing: '2px',
+            textAlign: 'center',
+            display: 'block'
           }}
         >
-          WHATSAPP HATTI
+          WHATSAPP İLETİŞİM HATTI
         </a>
-      </div>
-
-      <footer style={{ fontSize: '0.7rem', color: '#333', letterSpacing: '2px' }}>
-        © 2024 TİMA PROJE | PRIVACY FIRST
       </footer>
+
     </div>
   );
 }
