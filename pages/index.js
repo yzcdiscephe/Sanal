@@ -4,93 +4,77 @@ export default function Home() {
 
       {/* HERO */}
       <section style={s.hero}>
-        <h1 style={s.h1}>Güvenle Yeniliyoruz.</h1>
+        <h1 style={s.h1}>Güvenle Yeniliyoruz</h1>
 
         <p style={s.sub}>
-          Türkiye genelinde kentsel dönüşüm çözümleri
+          Kentsel dönüşümde sessiz ama sağlam çözümler
         </p>
 
-        <p style={s.text}>
-          Merkezi <strong>Fatih / İstanbul</strong>’da bulunan
-          <strong> TİMA PROJE</strong>, kentsel dönüşüm sürecini
-          hukuki, teknik ve inşaat aşamalarıyla uçtan uca yöneten
-          profesyonel bir çözüm ortağıdır.
+        <p style={s.desc}>
+          <strong>TİMA PROJE</strong>, merkezi İstanbul’da bulunan,
+          Türkiye genelinde kentsel dönüşüm projeleri yürüten
+          bir proje ve taahhüt firmasıdır.
         </p>
 
         <a href="tel:05557999111" style={s.cta}>
-          📞 0555 799 91 11
+          0555 799 91 11
         </a>
-
-        <p style={s.note}>
-          Ücretsiz yerinde inceleme · Şeffaf süreç · Tek muhatap
-        </p>
       </section>
 
-      {/* GÜVEN */}
-      <section style={s.grid}>
-        <div style={s.box}>✔ Hak kaybı olmadan dönüşüm</div>
-        <div style={s.box}>✔ Sözleşmeli ve şeffaf ilerleme</div>
-        <div style={s.box}>✔ Zamanında teslim anlayışı</div>
-      </section>
+      {/* AYIRICI */}
+      <div style={s.divider}></div>
 
-      {/* GERÇEKLER */}
-      <section style={s.alt}>
-        <h2 style={s.h2}>
-          Kentsel Dönüşümde Kimsenin Açıkça Söylemediği Gerçekler
-        </h2>
-
-        <ul style={s.list}>
-          <li>❗ Teslim tarihi olmayan sözleşmeler ciddi risk taşır</li>
-          <li>❗ Arsa payı net değilse hak kaybı yaşanabilir</li>
-          <li>❗ Muhatap belli değilse süreç uzar</li>
-          <li>❗ “Her şeyi biz hallederiz” diyenlere dikkat edilmelidir</li>
-        </ul>
-
-        <p style={s.italic}>
-          Bu sayfayı, kentsel dönüşüm düşünen birine mutlaka okutun.
-        </p>
-      </section>
-
-      {/* HİKAYE */}
+      {/* FELSEFE */}
       <section style={s.section}>
-        <h2 style={s.h2}>Bize En Sık Sorulan Sorular</h2>
+        <h2 style={s.h2}>Yaklaşımımız</h2>
 
-        <p><strong>“Evim yıkılınca ne olacak?”</strong><br />
-        Geçici konut ve kira destekleri baştan planlanır.</p>
+        <p style={s.min}>
+          Her projeyi almıyoruz.  
+          Her binayı dönüştürmüyoruz.
+        </p>
 
-        <p><strong>“Bu iş yarım kalır mı?”</strong><br />
-        Süreç, sözleşme ve iş planı ile güvence altına alınır.</p>
-
-        <p><strong>“Komşular ikna olmuyor, ne yapacağız?”</strong><br />
-        Uzlaşma süreçleri profesyonel şekilde yönetilir.</p>
-
-        <p><strong>“Kimle muhatap olacağız?”</strong><br />
-        Tüm süreç boyunca tek muhatap: <strong>TİMA PROJE</strong></p>
+        <p style={s.desc}>
+          Teknik, hukuki ve insani olarak
+          doğru ilerlemeyeceğini düşündüğümüz
+          projelerde yer almıyoruz.
+        </p>
       </section>
+
+      {/* AYIRICI */}
+      <div style={s.divider}></div>
 
       {/* SÜREÇ */}
-      <section style={s.alt}>
-        <h2 style={s.h2}>TİMA PROJE ile Süreç</h2>
+      <section style={s.section}>
+        <h2 style={s.h2}>Süreç</h2>
 
-        <ol style={s.list}>
-          <li>Ücretsiz yerinde keşif</li>
-          <li>Teknik ve risk analizi</li>
-          <li>Hukuki hazırlık</li>
-          <li>Proje ve ruhsat süreci</li>
-          <li>İnşaat aşaması</li>
-          <li>Anahtar teslim</li>
-        </ol>
+        <p style={s.min}>
+          Keşif · Analiz · Planlama · İnşaat · Teslim
+        </p>
+
+        <p style={s.desc}>
+          Sürecin her aşaması kayıt altındadır.
+          Tek muhatap, şeffaf ilerleme.
+        </p>
+      </section>
+
+      {/* AYIRICI */}
+      <div style={s.divider}></div>
+
+      {/* GÜVEN */}
+      <section style={s.section}>
+        <h2 style={s.h2}>Merkez</h2>
+
+        <p style={s.desc}>
+          Merkez ofisimiz İstanbul / Fatih’tedir.  
+          Projelerimiz Türkiye genelindedir.
+        </p>
       </section>
 
       {/* FOOTER */}
       <footer style={s.footer}>
         <p><strong>TİMA PROJE</strong></p>
         <p>Kentsel Dönüşüm & İnşaat</p>
-        <p>Merkez Ofis: Fatih / İstanbul</p>
-        <p>📞 0555 799 91 11</p>
-        <p style={s.footerNote}>
-          Güveni reklamla değil, bilgiyle kurar.
-        </p>
+        <p>İstanbul</p>
       </footer>
 
     </main>
@@ -102,85 +86,68 @@ export default function Home() {
 const s = {
   page: {
     fontFamily: "Inter, sans-serif",
-    background: "#F6F6F4",
-    color: "#2B2B2B",
-    lineHeight: 1.7
+    background: "#F7F7F5",
+    color: "#2A2A2A"
   },
   hero: {
-    padding: "70px 20px",
-    textAlign: "center"
+    padding: "120px 20px",
+    textAlign: "center",
+    maxWidth: "900px",
+    margin: "0 auto"
   },
   h1: {
     fontFamily: "Playfair Display, serif",
-    fontSize: "38px",
-    marginBottom: "10px"
-  },
-  h2: {
-    fontFamily: "Playfair Display, serif",
-    fontSize: "26px",
+    fontSize: "44px",
+    fontWeight: 500,
     marginBottom: "20px"
   },
   sub: {
     fontSize: "18px",
-    marginBottom: "20px",
-    fontWeight: 500
+    opacity: 0.8,
+    marginBottom: "40px"
   },
-  text: {
-    maxWidth: "720px",
-    margin: "0 auto 25px"
+  desc: {
+    maxWidth: "520px",
+    margin: "0 auto 40px",
+    fontSize: "15px",
+    lineHeight: 1.8,
+    opacity: 0.85
   },
   cta: {
-    display: "inline-block",
-    background: "#B59A5A",
-    color: "#fff",
-    padding: "16px 28px",
-    borderRadius: "6px",
-    fontWeight: 600,
-    textDecoration: "none"
+    fontSize: "15px",
+    letterSpacing: "0.5px",
+    textDecoration: "none",
+    color: "#B59A5A",
+    borderBottom: "1px solid #B59A5A",
+    paddingBottom: "4px"
   },
-  note: {
-    marginTop: "15px",
-    fontSize: "14px",
-    opacity: 0.7
-  },
-  grid: {
-    display: "grid",
-    gridTemplateColumns: "1fr",
-    gap: "12px",
-    padding: "20px"
-  },
-  box: {
-    background: "#fff",
-    padding: "18px",
-    borderRadius: "10px",
-    textAlign: "center",
-    fontWeight: 500
-  },
-  alt: {
-    background: "#ECE8E1",
-    padding: "50px 20px"
+  divider: {
+    width: "60px",
+    height: "1px",
+    background: "#D6D2CB",
+    margin: "80px auto"
   },
   section: {
-    padding: "50px 20px"
-  },
-  list: {
-    maxWidth: "650px",
+    textAlign: "center",
+    maxWidth: "700px",
     margin: "0 auto",
-    paddingLeft: "20px"
+    padding: "0 20px"
   },
-  italic: {
-    marginTop: "25px",
-    fontStyle: "italic",
-    textAlign: "center"
+  h2: {
+    fontFamily: "Playfair Display, serif",
+    fontSize: "26px",
+    fontWeight: 500,
+    marginBottom: "25px"
+  },
+  min: {
+    fontSize: "16px",
+    marginBottom: "20px",
+    opacity: 0.8
   },
   footer: {
-    background: "#2B2B2B",
-    color: "#fff",
-    padding: "40px 20px",
-    textAlign: "center"
-  },
-  footerNote: {
-    marginTop: "10px",
+    marginTop: "140px",
+    padding: "60px 20px",
+    textAlign: "center",
     fontSize: "14px",
     opacity: 0.7
   }
