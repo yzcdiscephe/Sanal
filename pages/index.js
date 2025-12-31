@@ -7,12 +7,12 @@ export default function Home() {
         <h1 style={s.logo}>TİMA PROJE</h1>
 
         <p style={s.tag}>
-          Urban Transformation & Private Developments
+          Residential Urban Transformation
         </p>
 
         <p style={s.desc}>
-          Merkezi İstanbul’da bulunan TİMA PROJE, Türkiye genelinde
-          seçili kentsel dönüşüm ve özel proje geliştirme çalışmaları yürütür.
+          Refined apartment developments focused on
+          quality, proportion and long-term value.
         </p>
 
         <a href="tel:05557999111" style={s.call}>
@@ -20,40 +20,53 @@ export default function Home() {
         </a>
       </section>
 
-      {/* AYIRICI */}
-      <div style={s.line}></div>
+      {/* SEPARATOR */}
+      <div style={s.sep}></div>
 
-      {/* DURUŞ */}
+      {/* STATEMENT */}
       <section style={s.section}>
         <p style={s.statement}>
-          We take responsibility <br /> before we take projects.
+          Not towers. <br />
+          Residences.
+        </p>
+
+        <p style={s.small}>
+          Low-rise apartment projects designed
+          with restraint and precision.
         </p>
       </section>
 
-      {/* AYIRICI */}
-      <div style={s.line}></div>
+      {/* SEPARATOR */}
+      <div style={s.sep}></div>
 
-      {/* GÜVEN */}
+      {/* APPROACH */}
       <section style={s.section}>
-        <p style={s.points}>
-          Az sayıda proje · Net sorumluluk · Zamanında teslim
+        <p style={s.statement}>
+          Quiet luxury. <br />
+          Urban living.
+        </p>
+
+        <p style={s.small}>
+          We prioritize livability, proportion
+          and architectural clarity over scale.
         </p>
       </section>
 
-      {/* AYIRICI */}
-      <div style={s.line}></div>
+      {/* SEPARATOR */}
+      <div style={s.sep}></div>
 
-      {/* KONUM */}
+      {/* LOCATION */}
       <section style={s.section}>
         <p style={s.small}>
-          İstanbul merkezli. Türkiye genelinde.
+          Based in Istanbul. <br />
+          Working nationwide.
         </p>
       </section>
 
       {/* FOOTER */}
       <footer style={s.footer}>
         <p>TİMA PROJE</p>
-        <p>Kentsel Dönüşüm & İnşaat</p>
+        <p>Residential Development & Transformation</p>
       </footer>
 
     </main>
@@ -63,73 +76,71 @@ export default function Home() {
 const s = {
   page: {
     fontFamily: "Inter, sans-serif",
-    background: "#FAFAF8",
-    color: "#1F1F1F"
+    background: "#F5F5F2",
+    color: "#2A2A2A"
   },
   hero: {
     minHeight: "100vh",
-    padding: "140px 20px",
+    padding: "150px 20px",
     textAlign: "center",
     maxWidth: "900px",
     margin: "0 auto"
   },
   logo: {
     fontFamily: "Playfair Display, serif",
-    fontSize: "48px",
+    fontSize: "50px",
     fontWeight: 500,
     letterSpacing: "1px",
-    marginBottom: "10px"
+    marginBottom: "14px"
   },
   tag: {
     fontSize: "14px",
-    letterSpacing: "1.5px",
+    letterSpacing: "1.6px",
     textTransform: "uppercase",
-    opacity: 0.6,
-    marginBottom: "40px"
+    opacity: 0.55,
+    marginBottom: "42px"
   },
   desc: {
-    maxWidth: "520px",
-    margin: "0 auto 50px",
+    maxWidth: "460px",
+    margin: "0 auto 56px",
     fontSize: "15px",
     lineHeight: 1.9,
     opacity: 0.85
   },
   call: {
-    fontSize: "15px",
+    fontSize: "14px",
     textDecoration: "none",
-    color: "#B59A5A",
-    borderBottom: "1px solid #B59A5A",
+    color: "#8C7A52",
+    borderBottom: "1px solid #8C7A52",
     paddingBottom: "4px",
-    letterSpacing: "0.5px"
+    letterSpacing: "0.4px"
   },
-  line: {
-    width: "60px",
+  sep: {
+    width: "64px",
     height: "1px",
-    background: "#D4D0C9",
-    margin: "90px auto"
+    background: "#D8D4CC",
+    margin: "96px auto"
   },
   section: {
     textAlign: "center",
-    maxWidth: "700px",
+    maxWidth: "720px",
     margin: "0 auto",
     padding: "0 20px"
   },
   statement: {
     fontFamily: "Playfair Display, serif",
-    fontSize: "28px",
-    lineHeight: 1.5
-  },
-  points: {
-    fontSize: "15px",
-    opacity: 0.75
+    fontSize: "30px",
+    lineHeight: 1.5,
+    marginBottom: "22px"
   },
   small: {
     fontSize: "14px",
-    opacity: 0.6
+    lineHeight: 1.8,
+    opacity: 0.65
   },
   footer: {
-    marginTop: "140px",
-    padding: "60px 20px",
+    marginTop: "160px",
+    padding: "70px 20px",
     textAlign: "center",
     fontSize: "13px",
     opacity: 0.6
