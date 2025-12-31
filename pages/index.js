@@ -4,128 +4,109 @@ export default function Home() {
 
       {/* HERO */}
       <section style={s.hero}>
-        <h1 style={s.h1}>Güvenle Yeniliyoruz</h1>
+        <h1 style={s.logo}>TİMA PROJE</h1>
 
-        <p style={s.sub}>
-          Kentsel dönüşümde sessiz ama sağlam çözümler
+        <p style={s.tag}>
+          Urban Transformation & Private Developments
         </p>
 
         <p style={s.desc}>
-          <strong>TİMA PROJE</strong>, merkezi İstanbul’da bulunan,
-          Türkiye genelinde kentsel dönüşüm projeleri yürüten
-          bir proje ve taahhüt firmasıdır.
+          Merkezi İstanbul’da bulunan TİMA PROJE, Türkiye genelinde
+          seçili kentsel dönüşüm ve özel proje geliştirme çalışmaları yürütür.
         </p>
 
-        <a href="tel:05557999111" style={s.cta}>
-          0555 799 91 11
+        <a href="tel:05557999111" style={s.call}>
+          0555&nbsp;799&nbsp;91&nbsp;11
         </a>
       </section>
 
       {/* AYIRICI */}
-      <div style={s.divider}></div>
+      <div style={s.line}></div>
 
-      {/* FELSEFE */}
+      {/* DURUŞ */}
       <section style={s.section}>
-        <h2 style={s.h2}>Yaklaşımımız</h2>
-
-        <p style={s.min}>
-          Her projeyi almıyoruz.  
-          Her binayı dönüştürmüyoruz.
-        </p>
-
-        <p style={s.desc}>
-          Teknik, hukuki ve insani olarak
-          doğru ilerlemeyeceğini düşündüğümüz
-          projelerde yer almıyoruz.
+        <p style={s.statement}>
+          We take responsibility <br /> before we take projects.
         </p>
       </section>
 
       {/* AYIRICI */}
-      <div style={s.divider}></div>
-
-      {/* SÜREÇ */}
-      <section style={s.section}>
-        <h2 style={s.h2}>Süreç</h2>
-
-        <p style={s.min}>
-          Keşif · Analiz · Planlama · İnşaat · Teslim
-        </p>
-
-        <p style={s.desc}>
-          Sürecin her aşaması kayıt altındadır.
-          Tek muhatap, şeffaf ilerleme.
-        </p>
-      </section>
-
-      {/* AYIRICI */}
-      <div style={s.divider}></div>
+      <div style={s.line}></div>
 
       {/* GÜVEN */}
       <section style={s.section}>
-        <h2 style={s.h2}>Merkez</h2>
+        <p style={s.points}>
+          Az sayıda proje · Net sorumluluk · Zamanında teslim
+        </p>
+      </section>
 
-        <p style={s.desc}>
-          Merkez ofisimiz İstanbul / Fatih’tedir.  
-          Projelerimiz Türkiye genelindedir.
+      {/* AYIRICI */}
+      <div style={s.line}></div>
+
+      {/* KONUM */}
+      <section style={s.section}>
+        <p style={s.small}>
+          İstanbul merkezli. Türkiye genelinde.
         </p>
       </section>
 
       {/* FOOTER */}
       <footer style={s.footer}>
-        <p><strong>TİMA PROJE</strong></p>
+        <p>TİMA PROJE</p>
         <p>Kentsel Dönüşüm & İnşaat</p>
-        <p>İstanbul</p>
       </footer>
 
     </main>
   );
 }
 
-/* === STYLES === */
-
 const s = {
   page: {
     fontFamily: "Inter, sans-serif",
-    background: "#F7F7F5",
-    color: "#2A2A2A"
+    background: "#FAFAF8",
+    color: "#1F1F1F"
   },
   hero: {
-    padding: "120px 20px",
+    minHeight: "100vh",
+    padding: "140px 20px",
     textAlign: "center",
     maxWidth: "900px",
     margin: "0 auto"
   },
-  h1: {
+  logo: {
     fontFamily: "Playfair Display, serif",
-    fontSize: "44px",
+    fontSize: "48px",
     fontWeight: 500,
-    marginBottom: "20px"
+    letterSpacing: "1px",
+    marginBottom: "10px"
   },
-  sub: {
-    fontSize: "18px",
-    opacity: 0.8,
+  tag: {
+    fontSize: "14px",
+    letterSpacing: "1.5px",
+    textTransform: "uppercase",
+    opacity: 0.6,
     marginBottom: "40px"
   },
   desc: {
     maxWidth: "520px",
-    margin: "0 auto 40px",
+    margin: "0 auto 50px",
     fontSize: "15px",
-    lineHeight: 1.8,
+    lineHeight: 1.9,
     opacity: 0.85
   },
-  cta: {
+  call: {
     fontSize: "15px",
-    letterSpacing: "0.5px",
     textDecoration: "none",
     color: "#B59A5A",
     borderBottom: "1px solid #B59A5A",
-    paddingBottom: "4px"
+    paddingBottom: "4px",
+    letterSpacing: "0.5px"
   },
-  divider: {
+  line: {
     width: "60px",
     height: "1px",
-    background: "#D6D2CB",
-    margin: "80px auto"
+    background: "#D4D0C9",
+    margin: "90px auto"
   },
   section: {
     textAlign: "center",
@@ -133,22 +114,24 @@ const s = {
     margin: "0 auto",
     padding: "0 20px"
   },
-  h2: {
+  statement: {
     fontFamily: "Playfair Display, serif",
-    fontSize: "26px",
-    fontWeight: 500,
-    marginBottom: "25px"
+    fontSize: "28px",
+    lineHeight: 1.5
   },
-  min: {
-    fontSize: "16px",
-    marginBottom: "20px",
-    opacity: 0.8
+  points: {
+    fontSize: "15px",
+    opacity: 0.75
+  },
+  small: {
+    fontSize: "14px",
+    opacity: 0.6
   },
   footer: {
     marginTop: "140px",
     padding: "60px 20px",
     textAlign: "center",
-    fontSize: "14px",
-    opacity: 0.7
+    fontSize: "13px",
+    opacity: 0.6
   }
 };
