@@ -1,2 +1,0 @@
-# Sanal
-Tima PROJE
