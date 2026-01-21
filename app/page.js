@@ -1,62 +1,52 @@
 export default function Home() {
   return (
-    <main style={{
-      minHeight: '100vh',
-      background: '#0B1C2D',
-      color: 'white',
-      padding: '60px 24px',
-      fontFamily: 'Inter, sans-serif'
-    }}>
-      <section style={{
-        maxWidth: '1200px',
-        margin: '0 auto',
-        display: 'grid',
-        gridTemplateColumns: '1fr',
-        gap: '48px'
-      }}>
-        <div>
-          <h1 style={{
-            fontSize: '42px',
-            fontWeight: 600,
-            lineHeight: 1.2
-          }}>
-            TİMA PROJE
-          </h1>
+    <main style={{ background: "#0b1c2d", color: "#fff", minHeight: "100vh" }}>
+      
+      <header style={{ padding: "20px 40px", position: "sticky", top: 0 }}>
+        <strong style={{ color: "#d4af37" }}>TİMA PROJE</strong>
+      </header>
 
-          <p style={{
-            marginTop: '16px',
-            fontSize: '20px',
-            opacity: 0.85
-          }}>
-            Kentsel Dönüşümde<br />
-            Gerçekçi ve Şeffaf Ön Görünüm
-          </p>
+      <section style={{ padding: "120px 40px", textAlign: "center" }}>
+        <h1>
+          Geleceğin Güvenli Yapıları,<br />
+          Bugünün Lüksüyle Buluşuyor
+        </h1>
+        <p>
+          Kentsel dönüşüm sürecinizi şeffaf ve gerçekçi şekilde ele alıyoruz.
+        </p>
+        <button style={{ padding: "16px 32px", background: "#d4af37", border: 0 }}>
+          Ücretsiz Ön Görünüm Al
+        </button>
+      </section>
 
-          <button style={{
-            marginTop: '32px',
-            padding: '14px 28px',
-            background: '#C9A24D',
-            color: '#0B1C2D',
-            border: 'none',
-            fontSize: '16px',
-            fontWeight: 600,
-            cursor: 'pointer'
-          }}>
-            Ön Görünümü İncele
-          </button>
-        </div>
-
-        <div style={{
-          height: '320px',
-          background: '#122B45',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          opacity: 0.8
-        }}>
-          <span>3D Yapı Kütlesi (Temsili)</span>
+      <section style={{ padding: "60px 40px" }}>
+        <h2>Kalite Standartlarımız</h2>
+        <div style={{ display: "flex", gap: 24 }}>
+          <div>Vitra</div>
+          <div>Artema</div>
+          <div>Siemens</div>
+          <div>Rehau</div>
+          <div>Schneider</div>
+          <div>Knauf</div>
         </div>
       </section>
+
+      <section style={{ padding: "60px 40px" }}>
+        <h2>3D Bina Ön İzleme</h2>
+        <div
+          style={{
+            height: 300,
+            background: "#111",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            color: "#777"
+          }}
+        >
+          360° Görselleştirme Alanı
+        </div>
+      </section>
+
     </main>
-  )
+  );
 }
