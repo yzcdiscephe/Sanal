@@ -3,11 +3,7 @@ export const metadata = {
   description: "Kentsel Dönüşüm Ön Görünüm Platformu"
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }) {
   return (
     <html lang="tr">
       <body style={{ margin: 0, fontFamily: "Arial, sans-serif" }}>
