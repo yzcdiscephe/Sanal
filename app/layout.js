@@ -1,9 +1,18 @@
-export default function RootLayout({ children }) {
+export const metadata = {
+  title: "TİMA PROJE",
+  description: "Kentsel Dönüşüm Ön Görünüm Platformu"
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="tr">
-      <body>
+      <body style={{ margin: 0, fontFamily: "Arial, sans-serif" }}>
         {children}
       </body>
     </html>
-  )
+  );
 }
