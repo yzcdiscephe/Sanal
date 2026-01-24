@@ -4,13 +4,10 @@ import { useState } from 'react';
 export default function Calculator() {
   const [metre, setMetre] = useState(100);
 
-  const fark = metre * 2500;
-
   return (
     <section id="hesaplama" className="calculator">
       <h2>Dairen İçin Tahmini Senaryo</h2>
 
-      <label>Daire m²</label>
       <input
         type="range"
         min="70"
@@ -19,10 +16,8 @@ export default function Calculator() {
         onChange={(e) => setMetre(e.target.value)}
       />
 
-      <div className="result">
-        <p>Tahmini Ödenecek Fark</p>
-        <strong>{fark.toLocaleString()} ₺</strong>
-      </div>
+      <p><strong>{metre} m²</strong> mevcut daire</p>
+      <p>Tahmini fark: <strong>{(metre * 2500).toLocaleString()} ₺</strong></p>
     </section>
   );
 }
