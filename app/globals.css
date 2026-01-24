@@ -7,26 +7,31 @@ body {
 
 section {
   padding: 80px 20px;
-  text-align: center;
 }
 
+/* HERO */
 .hero {
+  position: relative;   /* ÇOK ÖNEMLİ */
   height: 100vh;
   background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.9)),
-              url('/building.jpg') center/cover;
+              url('/building.jpg') center / cover;
 }
 
-.btn {
-  background: #b00020;
-  padding: 15px 30px;
-  color: #fff;
-  text-decoration: none;
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.calculator input {
-  width: 60%;
-}
-
+/* DİĞER BÖLÜMLER */
+.calculator,
+.quality,
+.facade,
+.process,
 .footer-cta {
-  background: #b00020;
+  min-height: 100vh;
+  background: #111;
 }
