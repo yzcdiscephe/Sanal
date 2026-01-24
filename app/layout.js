@@ -1,8 +1,8 @@
-import "./globals.css";
+import './globals.css';
 
 export const metadata = {
-  title: "TİMA PROJE",
-  description: "Kentsel Dönüşüm Daire Analizi"
+  title: 'TİMA PROJE',
+  description: 'Kentsel Dönüşüm ve Güvenli Yapılar',
 };
 
 export default function RootLayout({ children }) {
