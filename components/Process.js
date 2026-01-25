@@ -3,8 +3,8 @@ export default function Process() {
     <section className="process">
       <h2>Süreç Nasıl İlerler?</h2>
       <ul>
-        <li>Binanı inceliyoruz</li>
-        <li>Belediye uyumlu planlama</li>
+        <li>Mevcut yapı analizi</li>
+        <li>Belediye uyumlu proje</li>
         <li>İnşa süreci</li>
         <li>Güvenli teslim</li>
       </ul>
