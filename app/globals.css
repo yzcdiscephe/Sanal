@@ -1,18 +1,21 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
   background: #111;
   color: #fff;
+  font-family: Arial, sans-serif;
 }
 
 section {
+  min-height: 100vh;
   padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 
-/* HERO */
 .hero {
-  position: relative;   /* ÇOK ÖNEMLİ */
-  height: 100vh;
+  position: relative;
   background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.9)),
               url('/building.jpg') center / cover;
 }
@@ -26,12 +29,13 @@ section {
   align-items: center;
 }
 
-/* DİĞER BÖLÜMLER */
-.calculator,
-.quality,
-.facade,
-.process,
+.btn {
+  background: #b00020;
+  padding: 14px 28px;
+  color: white;
+  text-decoration: none;
+}
+
 .footer-cta {
-  min-height: 100vh;
-  background: #111;
+  background: #b00020;
 }
